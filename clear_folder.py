@@ -16,6 +16,6 @@ for i, img in tqdm(enumerate(images), total=len(images)):
       for temp in range(3):
           img = cv2.imread(f"{src_dir}/{images[i]}/{el}")
     
-          cv2.imwrite(f"{dst_dir}/{images[i]}_{temp}.png", img)
+          cv2.imwrite(f"{dst_dir}/{images[i]}_{el}_{temp}.png", img)
 
 print('DONE')
