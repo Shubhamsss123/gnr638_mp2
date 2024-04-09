@@ -23,6 +23,6 @@ for i, img in tqdm(enumerate(images), total=len(images)):
       # print(temp,kernels[temp][0])
       for temp in range(3):
           blur = cv2.GaussianBlur(img, kernels[temp][0], kernels[temp][1])
-          cv2.imwrite(f"{dst_dir}/{images[i]}_{temp}.png", blur)
+          cv2.imwrite(f"{dst_dir}/{images[i]}_{el}_{temp}.png", blur)
 
 print('DONE')
