@@ -11,7 +11,7 @@ dst_dir = os.path.join(root,'clear_data')
 
 kernels=[((3,3),0.3),((7,7),1),((11,11),1.6)]
 for i, img in tqdm(enumerate(images), total=len(images)):
-    for el in os.listdir( '/content/data/clear_images/'+images[i]):
+    for el in os.listdir(os.path.join(src_dir,images[i])):
 
       for temp in range(3):
           img = cv2.imread(f"{src_dir}/{images[i]}/{el}")
