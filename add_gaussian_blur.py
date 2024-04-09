@@ -13,7 +13,7 @@ dst_dir=os.path.join(root,'blur_data')
 
 kernels=[((3,3),0.3),((7,7),1),((11,11),1.6)]
 for i, img in tqdm(enumerate(images), total=len(images)):
-    for el in os.listdir( '/content/data/clear_images/'+images[i]):
+    for el in os.listdir(os.path.join(src_dir,images[i])):
       img = cv2.imread(f"{src_dir}/{images[i]}/{el}")
 
       # temp=np.random.randint(0,3)
