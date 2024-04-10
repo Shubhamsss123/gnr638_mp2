@@ -177,6 +177,9 @@ end = time.time()
 
 print(f"Took {((start-end)/60):.3f} minutes to train")
 
+# save the model to disk
+print('Saving model...')
+torch.save(model.state_dict(), "{os.path.join(root,'outputs')}/model.pth")
 # loss plots
 plt.figure(figsize=(10, 7))
 plt.plot(train_loss, color='orange', label='train loss')
@@ -184,9 +187,6 @@ plt.plot(val_loss, color='red', label='validataion loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
-plt.savefig('{os.path.join(root,"outputs")}/loss.png')
+plt.savefig("{os.path.join(root,'outputs')}/loss.png")
 plt.show()
 
-# save the model to disk
-print('Saving model...')
-torch.save(model.state_dict(), '{os.path.join(root,"outputs")}/model.pth')
